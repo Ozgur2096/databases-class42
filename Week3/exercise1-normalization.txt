@@ -1,0 +1,21 @@
+1.  - Column food_code and food_description violate 1NF because they contain multiple values separated by commas (not atomic).
+    - Column dinner_date violates 1NF because in each column the values stored must be of the same kind or type.
+
+2.  These entities can be extracted:
+        Members (member_id, member_name, member_address)
+        Dinners (dinner_id, dinner_date, venue_code)
+        Venues (venue_code, venue_description)
+        Foods (food_code, food_description)
+
+3.  3NF solution: 
+        Members Table         (member_id (PK), member_name, member_address)
+        Dinners Table         (dinner_id (PK), dinner_date, venue_code(FK))
+        Venues Table          (venue_code (PK), venue_description)
+        Foods Table           (food_code (PK), food_description)
+        Members_diners Table  (id (PK), member_id (FK), dinner_id (FK))
+        Dinners_food Table    (id (PK), dinner_id (FK), food_code (FK))
+
+
+
+
+    
